@@ -95,29 +95,23 @@ def INS_ANN(input_dir, mafft_exe, species):
 ################################################################################################################################################################              
 # Get the total number of CPU threads
     total_cpus = os.cpu_count()
-    
 # Calculate the available CPU threads based on CPU usage
     cpu_usage = psutil.cpu_percent(interval=1)  # Adjust the interval as needed
     available_cpus = total_cpus * (1 - (cpu_usage / 100))
-
 # Calculate num_threads as 75% of the available CPUs
     num_threads = int(available_cpus * 0.75)
-
 # Ensure the number of threads is at least 1
     num_threads = max(num_threads, 1)
-    print ('No of threads is used for Mafft is', num_threads)
-
+    #print ('No of threads is used for Mafft is', num_threads)
 # Define your batch size and number of parallel workers
     batch_size = 100
     num_parallel_workers = 5  # You want to process 5 batches concurrently
     threads_per_job=int(num_threads/num_parallel_workers)
-    print ('No of threads for each job is', threads_per_job)
-
+    #print ('No of threads for each job is', threads_per_job)
     input_dir = "./fasta_files"
     MA_dir = "./MA"
     con_dir = "./con"
     mafft_exe = mafft_exe #input arg
-
     os.makedirs(MA_dir, exist_ok=True)
     os.makedirs(con_dir, exist_ok=True)
 
@@ -189,13 +183,11 @@ def INS_ANN(input_dir, mafft_exe, species):
                    , capture_output=True,text=True, shell = True)
     
     return {input_dir, MA_dir, con_dir,f"{samplename}.ins.con.fasta", RM_dir}
-
-
     
 ##Usage
-input_dir = '/home/asmaa/Desktop/MUN_PhD/PhD_research/NanoVar2/Ins_seq/test'
-mafft_exe = '/usr/bin/mafft'
-species = 'human'
-outputs = INS_ANN(input_dir, mafft_exe,species)
+#input_dir = '/home/asmaa/Desktop/MUN_PhD/PhD_research/NanoVar2/Ins_seq/test'
+#mafft_exe = '/usr/bin/mafft'
+#species = 'human'
+#outputs = INS_ANN(input_dir, mafft_exe,species)
 
 
