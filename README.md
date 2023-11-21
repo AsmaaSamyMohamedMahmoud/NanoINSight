@@ -4,7 +4,7 @@
 * Biopython >=v1.79
 * RepeatMasker
 ##### 1. _scikit-allel_
-######## Option 1: Conda 
+##### Option 1: Conda 
 ```
 conda install -c conda-forge scikit-allel
 ```
