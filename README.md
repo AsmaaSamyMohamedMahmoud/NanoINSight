@@ -18,7 +18,7 @@ pip install scikit-allel[full]
 pip install biopython
 *make sure the version is >=1.79 
 ```
-##### 2. _RepeatMasker_
+##### 3. _RepeatMasker_
 #### Option 1: Conda 
 ```
  conda install -c bioconda repeatmasker
