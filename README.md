@@ -35,6 +35,6 @@ Please visit [here] (https://mafft.cbrc.jp/alignment/software/installation_witho
  conda install -c bioconda repeatmasker
 ```
 ##### Option 2: 
-Please visit [here](https://www.repeatmasker.org/RepeatMasker/)https://www.repeatmasker.org/RepeatMasker/) for instructions to install.
+Please visit [here](https://www.repeatmasker.org/RepeatMasker/) for instructions to install.
 
 * Please note that this script will utilize 75% of the available CPUs for multiple alignment using MAFFT.
