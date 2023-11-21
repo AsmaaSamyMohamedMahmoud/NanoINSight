@@ -26,7 +26,7 @@ pip install biopython
  ```
 ##### Option 2: 
 Please visit [here](https://mafft.cbrc.jp/alignment/software/source.html) to download the "without_extensionx" source package 
-Please visit [here](https://mafft.cbrc.jp/alignment/software/installation_without_root.html) for instructions to install.
+and visit [here](https://mafft.cbrc.jp/alignment/software/installation_without_root.html) for instructions to install.
 * Please note that MAFFT source package with extnesions is not needed as it supports RNA structural alignments. 
 * Path of executable binary is needed. You can get it by typing "which mafft" in your terminal window. 
 ##### 4. _RepeatMasker_
