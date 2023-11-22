@@ -25,8 +25,8 @@ import subprocess
 ################################################################################################################################################################
 #Same path of the work directory of nanovar
 def INS_ANN(input_dir, mafft_exe, species):
-    os.chdir(input_dir)
-    vcf_file = [file for file in os.listdir() if re.match(r'.*\.vcf$', file)]
+    os.chdir(input_dir)  ##### Why input dir? Why not change input to a single VCF file?
+    vcf_file = [file for file in os.listdir() if re.match(r'.*\.vcf$', file)] 
     ##to make vcf variable as a string 
     vcf = vcf_file[0]
 #Read vcf file to a df
@@ -67,7 +67,7 @@ def INS_ANN(input_dir, mafft_exe, species):
 #Add '>' as it is needed for alignment
     id_seq['coo']='>'+id_seq['coo'] 
 #Calculate end position and join all to add it later to con file header
-    id_seq['end']=id_seq['POS']+id_seq['SVLEN']
+    id_seq['end']=id_seq['POS']+id_seq['SVLEN']  ##### Why is chromosomal end coordinated calculated this way? Shouldn't 'end' be just POS+1? The length of the insert (SVLEN) should not be used to determine end coordinates, or am I reading this wrongly?
     id_seq['POS']=id_seq['POS'].astype(str)
     id_seq['end']=id_seq['end'].astype(str)
     id_seq['sv_coo']='::'+id_seq['CHROM']+':'+id_seq['POS']+'-'+id_seq['end']
