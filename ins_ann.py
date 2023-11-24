@@ -93,7 +93,7 @@ def INS_ANN(input_dir, mafft_exe, species):
 ################################################################################################################################################################
 #(2) Generating multiple alignment and consensus sequences for each INS
 ################################################################################################################################################################              
-# Get the total number of CPU threads
+# Get the total number of CPU threads  ##### How about just allow the user to specify number of threads to use?
     total_cpus = os.cpu_count()
 # Calculate the available CPU threads based on CPU usage
     cpu_usage = psutil.cpu_percent(interval=1)  # Adjust the interval as needed
@@ -106,7 +106,7 @@ def INS_ANN(input_dir, mafft_exe, species):
 # Define your batch size and number of parallel workers
     batch_size = 100
     num_parallel_workers = 5  # You want to process 5 batches concurrently
-    threads_per_job=int(num_threads/num_parallel_workers)
+    threads_per_job=int(num_threads/num_parallel_workers)  ##### What if num_threads is < 5? 
     #print ('No of threads for each job is', threads_per_job)
     input_dir = "./fasta_files"
     MA_dir = "./MA"
