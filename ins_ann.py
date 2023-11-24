@@ -177,7 +177,7 @@ def INS_ANN(input_dir, mafft_exe, species):
 #(3) Annotation using RepeatMasker 
 ################################################################################################################################################################     
     input_sequence = "{samplename}.ins.con.fasta"
-    RM_dir = "./RM_ouptut/"
+    RM_dir = "./RM_output/"
     species = species
     subprocess.run([f"RepeatMasker -species {species} -s -pa {threads_per_job} {input_sequence} -dir {RM_dir}"]
                    , capture_output=True,text=True, shell = True)
