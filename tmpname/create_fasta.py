@@ -1,16 +1,6 @@
 import os
-import re
 import allel
 import pandas as pd
-import psutil
-from concurrent.futures import ThreadPoolExecutor
-from Bio import AlignIO
-from Bio.Align import AlignInfo
-from Bio.Seq import Seq
-from Bio.SeqRecord import SeqRecord
-from Bio import SeqIO
-from Bio.Align.Applications import MafftCommandline
-import subprocess
 
 ################################################################################################################################################################
 #(1)Create fasta files of each INS
