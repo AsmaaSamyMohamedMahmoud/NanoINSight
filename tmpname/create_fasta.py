@@ -67,8 +67,9 @@ def generate_fasta(id_seq, wk_dir):
     #Group seq and coordinates by SV-ID
     grouped = id_seq.groupby('ID')
     #Create the 'fasta_files' directory if it doesn't exist
-    if not os.path.exists(os.path.join(wk_dir, 'fasta_files')):
-        os.makedirs(os.path.join(wk_dir, 'fasta_files'))
+    fasta_dir = os.path.join(wk_dir, 'fasta_files')
+    if not os.path.exists(fasta_dir):
+        os.makedirs(fasta_dir)
     #Loop through each group and write it to a separate text file
     for sv_id, group_df in grouped:
         #Check the number of rows in group_df
@@ -80,3 +81,4 @@ def generate_fasta(id_seq, wk_dir):
             #Write the content to the fasta file
             with open(filename, 'w') as f:
                 f.write('\n'.join(output_str.tolist()))  # Join all rows and write them
+    return fasta_dir
