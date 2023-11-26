@@ -19,15 +19,15 @@ def get_args(args=sys.argv[1:]):
     parser.add_argument("-s", "--species", type=str, metavar="str",
                         help="specify species for repeatmasker (e.g. human)")
 
-    parser.add_argument("-i", "--ins-fa", type=str, metavar="path",
+    parser.add_argument("-i", "--insfa", type=str, metavar="path",
                         help="""specify path to ins_seq.fa file from NanoVar, 
 otherwise assumed in work directory""")
 
-    parser.add_argument("-u", "--sup-tsv", type=str, metavar="path",
+    parser.add_argument("-u", "--suptsv", type=str, metavar="path",
                         help="""specify path to sv_support_reads.tsv file from NanoVar, 
 otherwise assumed in work directory""")
     
-    parser.add_argument("--mafft-path", type=str, metavar="path",
+    parser.add_argument("-m", "--mafftpath", type=str, metavar="path",
                         help="specify path to 'mafft' executable")
     
     def restrict_threads(t):
@@ -46,7 +46,7 @@ otherwise assumed in work directory""")
     args = parser.parse_args(args)
     
     check_args(args.species)
-    args.mafft-path = check_exe(args.mafft-path, 'mafft')
+    args.mafftpath = check_exe(args.mafftpath, 'mafft')
     return args
 
 # Custom usage message
