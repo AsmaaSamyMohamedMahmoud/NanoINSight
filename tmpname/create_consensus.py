@@ -37,10 +37,10 @@ def create_cons(vcf, wk_dir, fasta_dir, id_seq, num_threads, mafft_path, batch_s
     mafft_exe = mafft_path #input arg
     os.makedirs(MA_dir, exist_ok=True)
     os.makedirs(con_dir, exist_ok=True)
-    submit_jobs(fasta_dir, MA_dir, con_dir, mafft_exe, threads_per_job, num_parallel_workers, batch_size)
+    threads_per_job = submit_jobs(fasta_dir, MA_dir, con_dir, mafft_exe, threads_per_job, num_parallel_workers, batch_size)
     rename_header(con_dir, id_seq)
     samplename = cat_consensus(vcf, con_dir, wk_dir)
-    return samplename
+    return samplename, threads_per_job
 
 ## Run Mafft and generate consensus with multi-threading
 def submit_jobs(fasta_dir, MA_dir, con_dir, mafft_exe, threads_per_job, num_parallel_workers, batch_size):
@@ -70,7 +70,7 @@ def submit_jobs(fasta_dir, MA_dir, con_dir, mafft_exe, threads_per_job, num_para
         for i in range(0, len(files), batch_size):
             batch = files[i:i + batch_size]
             executor.submit(process_batch, batch)
-    #print ('Generating consensus sequences is DONE')
+    return threads_per_job
 
 ## Header of each file should be renamed to the SV ID
 def rename_header(con_dir, id_seq):
