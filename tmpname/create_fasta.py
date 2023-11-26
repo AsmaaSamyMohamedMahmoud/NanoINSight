@@ -10,7 +10,8 @@ def create_fa(vcf, wk_dir, sv_sup, ins_seq):
     sr = parse_vcf(vcf, wk_dir, sv_sup)
     id, seq = get_ins_seq(ins_seq)
     id_seq = match_reads(sr, id, seq)
-    generate_fasta(id_seq, wk_dir)
+    fasta_dir = generate_fasta(id_seq, wk_dir)
+    return id_seq, fasta_dir
     
 ## Parse VCF and supporting reads into dataframe
 def parse_vcf(vcf, wk_dir, sv_sup):
