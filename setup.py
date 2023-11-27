@@ -24,6 +24,7 @@ setup(
         "console_scripts": [
             "tmpname=tmpname.tmpname:main",
         ],
+    },
     python_requires='>=3',
     classifiers=[
         "Operating System :: POSIX :: Linux",
