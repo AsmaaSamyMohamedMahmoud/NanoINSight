@@ -17,7 +17,7 @@ def annotate_ins(vcf,
     tmpname.rep_annote(wk_dir, samplename, threads_per_job, species)
 
 def main():
-    args = get_args()
+    args = tmpname.get_args()
     # Check presence of ins_seq and sv_sup files
     if not os.path.isfile(args.insfa):
         raise Exception("Error: ins_seq.fa file is not found in %s." % args.insfa)
