@@ -29,6 +29,9 @@ otherwise assumed in work directory""")
     
     parser.add_argument("-m", "--mafftpath", type=str, metavar="path",
                         help="specify path to 'mafft' executable")
+
+    parser.add_argument("-r", "--repmaskpath", type=str, metavar="path",
+                        help="specify path to 'RepeatMasker' executable")
     
     def restrict_threads(t):
         if t < 1:
@@ -47,6 +50,7 @@ otherwise assumed in work directory""")
     
     check_args(args.species)
     args.mafftpath = check_exe(args.mafftpath, 'mafft')
+    args.repmaskpath = check_exe(args.repmaskpath, 'RepeatMasker')
     return args
 
 # Custom usage message
