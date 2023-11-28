@@ -34,6 +34,7 @@ otherwise assumed in work directory""")
                         help="specify path to 'RepeatMasker' executable")
     
     def restrict_threads(t):
+        t = int(t)
         if t < 1:
             raise argparse.ArgumentTypeError("Number of threads specified < 1, minimum requirement is 1 thread.")
         return t
