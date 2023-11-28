@@ -39,8 +39,8 @@ def create_cons(vcf, wk_dir, fasta_dir, id_seq, num_threads, mafft_path, batch_s
     os.makedirs(con_dir, exist_ok=True)
     threads_per_job = submit_jobs(fasta_dir, MA_dir, con_dir, mafft_exe, threads_per_job, num_parallel_workers, batch_size)
     rename_header(con_dir, id_seq)
-    samplename = cat_consensus(vcf, con_dir, wk_dir)
-    return samplename, threads_per_job
+    con_fasta = cat_consensus(vcf, con_dir, wk_dir)
+    return con_fasta, threads_per_job
 
 ## Run Mafft and generate consensus with multi-threading
 def submit_jobs(fasta_dir, MA_dir, con_dir, mafft_exe, threads_per_job, num_parallel_workers, batch_size):
@@ -101,4 +101,4 @@ def cat_consensus(vcf, con_dir, wk_dir):
     samplename = os.path.basename(vcf).strip('.nanovar.pass.vcf.gz')
     out = os.path.join(wk_dir, f'{samplename}.ins.con.fasta')
     subprocess.run([f"cat {con_dir}/*.fasta > {out}"], capture_output=True, text=True, shell = True)
-    return samplename
+    return out
