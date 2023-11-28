@@ -19,11 +19,6 @@ def annotate_ins(vcf,
 
 def main():
     args = tmpname.get_args()
-    # Check presence of ins_seq and sv_sup files
-    if not os.path.isfile(args.insfa):
-        raise Exception("Error: ins_seq.fa file is not found in %s." % args.insfa)
-    if not os.path.isfile(args.suptsv):
-        raise Exception("Error: sv_support_reads.tsv file is not found in %s." % args.suptsv)
     # Check working directory
     if not os.path.exists(args.dir):
           os.makedirs(args.dir)
