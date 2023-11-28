@@ -65,7 +65,7 @@ def check_args(species):
     if species is None:
         raise Exception("Error: Repeatmasker species is not provided, please specify %s." % ', '.join(common_species))
     elif species not in common_species:
-        raise Exception("Error: %s species is not supported, please use %s, or contact us on GitHub" % (args.species, ', '.join(common_species))) 
+        raise Exception("Error: %s species is not supported, please use %s, or contact us on GitHub" % (species, ', '.join(common_species))) 
 
 # Check paths and executables
 def check_exe(path, exe):
