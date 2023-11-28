@@ -85,9 +85,9 @@ def check_exe(path, exe):
 # Check file paths
 def check_files(insfa, suptsv, wk_dir):
     if insfa is None:
-        insfa = os.path.join('wk_dir', 'ins_seq.fa')
+        insfa = os.path.join(wk_dir, 'ins_seq.fa')
     if suptsv is None:
-        suptsv = os.path.join('wk_dir', 'sv_support_reads.tsv')
+        suptsv = os.path.join(wk_dir, 'sv_support_reads.tsv')
     if not os.path.isfile(insfa):
         raise Exception("Error: ins_seq.fa file is not found in %s." % insfa)  
     if not os.path.isfile(suptsv):
