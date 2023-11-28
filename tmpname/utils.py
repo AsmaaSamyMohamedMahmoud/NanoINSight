@@ -52,6 +52,7 @@ otherwise assumed in work directory""")
     check_args(args.species)
     args.mafftpath = check_exe(args.mafftpath, 'mafft')
     args.repmaskpath = check_exe(args.repmaskpath, 'RepeatMasker')
+    args.insfa, args.suptsv = check_files(args.insfa, args.suptsv, args.dir)
     return args
 
 # Custom usage message
@@ -79,4 +80,15 @@ def check_exe(path, exe):
             return path
         else:
             raise Exception("Error: %s path do not exist" % path)
-    
+
+# Check file paths
+def check_files(insfa, suptsv, wk_dir):
+    if insfa is None:
+        insfa = os.path.join('wk_dir', 'ins_seq.fa')
+    if suptsv is None:
+        suptsv = os.path.join('wk_dir', 'sv_support_reads.tsv')
+    if not os.path.isfile(insfa):
+        raise Exception("Error: ins_seq.fa file is not found in %s." % insfa)  
+    if not os.path.isfile(suptsv):
+        raise Exception("Error: sv_support_reads.tsv file is not found in %s." % suptsv)
+    return insfa, suptsv
