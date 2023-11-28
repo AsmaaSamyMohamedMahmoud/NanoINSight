@@ -19,9 +19,7 @@ def annotate_ins(vcf,
 
 def main():
     args = tmpname.get_args()
-    # Check working directory
-    if not os.path.exists(args.dir):
-          os.makedirs(args.dir)
+    os.makedirs(args.dir, exist_ok=True)
     annotate_ins(args.vcf, args.dir, args.species, args.threads, args.mafftpath, args.insfa, args.suptsv)
 
 if __name__ == "__main__":
