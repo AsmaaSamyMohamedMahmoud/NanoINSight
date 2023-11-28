@@ -59,7 +59,7 @@ def msg():
     return "tmpname [options] -s [species] [VCF] [work_directory]"
 
 # Check args
-def check_args(species, mafft_exe):
+def check_args(species):
     # Check mandatory args
     common_species = ['human', 'mouse', 'rattus']
     if species is None:
