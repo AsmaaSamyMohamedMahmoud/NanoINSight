@@ -19,6 +19,7 @@ def annotate_ins(vcf,
     con_fasta, threads_per_job= tmpname.create_cons(vcf, wk_dir, fasta_dir, id_seq, threads, mafft_exe, batch_size=100, num_parallel_workers=5)
     print('Annotating insertions with RepeatMasker')
     tmpname.rep_annote(wk_dir, con_fasta, threads_per_job, species)
+    print('Finished')
 
 def main():
     args = tmpname.get_args()
