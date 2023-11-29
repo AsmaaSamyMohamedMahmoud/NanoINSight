@@ -47,6 +47,9 @@ otherwise assumed in work directory""")
     parser.add_argument("-v", "--version", action='version',
                         version=__version__,
                         help="prints version")
+    
+    parser.add_argument("-q", "--quiet", action='store_true',
+                        help="hide verbose")
   
     args = parser.parse_args(args)
     
