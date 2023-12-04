@@ -18,7 +18,7 @@ def create_cons(vcf, wk_dir, fasta_dir, id_seq, num_threads, mafft_path, batch_s
     # # Get the total number of CPU threads  ##### How about just allow the user to specify number of threads to use?
     # total_cpus = os.cpu_count()
     # # Calculate the available CPU threads based on CPU usage
-    # cpu_usage = psutil.cpu_percent(interval=1)  # Adjust the interval as needed
+    # cpu_usage = psutil.cpu_percent(interval=1)  
     # available_cpus = total_cpus * (1 - (cpu_usage / 100))
     # # Calculate num_threads as 75% of the available CPUs
     # num_threads = int(available_cpus * 0.75)
@@ -27,7 +27,7 @@ def create_cons(vcf, wk_dir, fasta_dir, id_seq, num_threads, mafft_path, batch_s
     #print ('No of threads is used for Mafft is', num_threads)
     # Define your batch size and number of parallel workers
     # batch_size = 100
-    # num_parallel_workers = 5  # You want to process 5 batches concurrently
+    # num_parallel_workers = 5  #process 5 batches concurrently
     """
     threads_per_job=int(num_threads/num_parallel_workers)  ##### What if num_threads is < 5? 
     #print ('No of threads for each job is', threads_per_job)
@@ -92,7 +92,6 @@ def rename_header(con_dir, id_seq):
             # Open file for writing and write updated lines
             with open(os.path.join(con_dir, con_file), "w") as f:
                 f.writelines(lines)
-    #print ('Renaming is DONE')
 
 # Concatenate all consensus sequences in one file for RM
 def cat_consensus(vcf, con_dir, wk_dir):
