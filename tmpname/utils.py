@@ -25,7 +25,7 @@ def get_args(args=sys.argv[1:]):
                           help="path to work directory")
 
     optional.add_argument("-h", "--help", action="help",
-                          default=SUPPRESS,
+                          default=argparse.SUPPRESS,
                           help="show this help message and exit")
     
     optional.add_argument("-i", "--insfa", type=str, metavar="path",
