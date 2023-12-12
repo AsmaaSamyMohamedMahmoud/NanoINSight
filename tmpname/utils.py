@@ -17,11 +17,11 @@ def get_args(args=sys.argv[1:]):
     
     requiredNamed.add_argument("vcf", type=str,
                                metavar="[VCF]",
-                               help="path to input VCF file", required=True)
+                               help="path to input VCF file")
 
     requiredNamed.add_argument("dir", type=str,
                                metavar="[work_directory]",
-                               help="path to work directory", required=True)
+                               help="path to work directory")
 
     parser.add_argument("-i", "--insfa", type=str, metavar="path",
                         help="""specify path to ins_seq.fa file from NanoVar, 
