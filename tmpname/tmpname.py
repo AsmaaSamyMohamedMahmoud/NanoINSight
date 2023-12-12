@@ -27,7 +27,7 @@ def main():
     if args.quiet:
         sys.stdout = open(os.devnull, 'w')
     os.makedirs(args.dir, exist_ok=True)
-    annotate_ins(args.vcf, args.dir, args.species, args.threads, args.mafftpath, args.insfa, args.suptsv)
+    annotate_ins(args.vcf, args.dir, args.species, args.threads, mafft_exe=args.mafftpath, ins_seq=args.insfa, sv_sup=args.suptsv)
 
 if __name__ == "__main__":
     main()
