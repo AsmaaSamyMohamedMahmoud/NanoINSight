@@ -10,31 +10,32 @@ def get_args(args=sys.argv[1:]):
     parser = argparse.ArgumentParser(description="tmpname tool description",
                                      formatter_class=argparse.RawTextHelpFormatter, usage=msg())
 
-    requiredNamed = parser.add_argument_group("required arguments")
+    required = parser.add_argument_group("required arguments")
+    optional = parser.add_argument_group("optional arguments")
 
-    requiredNamed.add_argument("-s", "--species", type=str, metavar="str",
+    required.add_argument("-s", "--species", type=str, metavar="str",
                                help="specify species for repeatmasker (e.g. human)", required=True)
     
-    requiredNamed.add_argument("vcf", type=str,
+    required.add_argument("vcf", type=str,
                                metavar="[VCF]",
                                help="path to input VCF file")
 
-    requiredNamed.add_argument("dir", type=str,
+    required.add_argument("dir", type=str,
                                metavar="[work_directory]",
                                help="path to work directory")
 
-    parser.add_argument("-i", "--insfa", type=str, metavar="path",
+    optional.add_argument("-i", "--insfa", type=str, metavar="path",
                         help="""specify path to ins_seq.fa file from NanoVar, 
 otherwise assumed in work directory""")
 
-    parser.add_argument("-u", "--suptsv", type=str, metavar="path",
+    optional.add_argument("-u", "--suptsv", type=str, metavar="path",
                         help="""specify path to sv_support_reads.tsv file from NanoVar, 
 otherwise assumed in work directory""")
     
-    parser.add_argument("-m", "--mafftpath", type=str, metavar="path",
+    optional.add_argument("-m", "--mafftpath", type=str, metavar="path",
                         help="specify path to 'mafft' executable")
 
-    parser.add_argument("-r", "--repmaskpath", type=str, metavar="path",
+    optional.add_argument("-r", "--repmaskpath", type=str, metavar="path",
                         help="specify path to 'RepeatMasker' executable")
     
     def restrict_threads(t):
@@ -43,15 +44,15 @@ otherwise assumed in work directory""")
             raise argparse.ArgumentTypeError("Number of threads specified < 1, minimum requirement is 1 thread.")
         return t
     
-    parser.add_argument("-t", "--threads", type=restrict_threads, metavar="int",
+    optional.add_argument("-t", "--threads", type=restrict_threads, metavar="int",
                         default=1,
                         help="specify number of threads [1]")
 
-    parser.add_argument("-v", "--version", action='version',
+    optional.add_argument("-v", "--version", action='version',
                         version=__version__,
                         help="prints version")
     
-    parser.add_argument("-q", "--quiet", action='store_true',
+    optional.add_argument("-q", "--quiet", action='store_true',
                         help="hide verbose")
   
     args = parser.parse_args(args)
