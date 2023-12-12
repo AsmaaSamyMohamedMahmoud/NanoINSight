@@ -34,7 +34,7 @@ def parse_vcf(vcf, wk_dir, sv_sup):
 def get_ins_seq(ins_seq):
     id = []
     seq = []
-    with open('ins_seq.fa') as f:
+    with open(ins_seq) as f:
         read = f.readlines()
     for i in range(len(read)):
         read[i]=read[i].rstrip()
