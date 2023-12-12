@@ -6,19 +6,22 @@ from tmpname import __version__
 
 # Parse input arguments
 def get_args(args=sys.argv[1:]):
+
     parser = argparse.ArgumentParser(description="tmpname tool description",
                                      formatter_class=argparse.RawTextHelpFormatter, usage=msg())
 
-    parser.add_argument("vcf", type=str,
-                        metavar="[VCF]",
-                        help="path to input VCF file")
+    requiredNamed = parser.add_argument_group("required arguments")
 
-    parser.add_argument("dir", type=str,
-                        metavar="[work_directory]",
-                        help="path to work directory")
-  
-    parser.add_argument("-s", "--species", type=str, metavar="str",
-                        help="specify species for repeatmasker (e.g. human)")
+    requiredNamed.add_argument("-s", "--species", type=str, metavar="str",
+                               help="specify species for repeatmasker (e.g. human)", required=True)
+    
+    requiredNamed.add_argument("vcf", type=str,
+                               metavar="[VCF]",
+                               help="path to input VCF file", required=True)
+
+    requiredNamed.add_argument("dir", type=str,
+                               metavar="[work_directory]",
+                               help="path to work directory", required=True)
 
     parser.add_argument("-i", "--insfa", type=str, metavar="path",
                         help="""specify path to ins_seq.fa file from NanoVar, 
