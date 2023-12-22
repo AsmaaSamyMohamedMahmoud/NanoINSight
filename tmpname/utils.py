@@ -2,12 +2,12 @@ import os
 import sys
 import argparse
 import distutils.spawn
-from tmpname import __version__
+from INSight import __version__
 
 # Parse input arguments
 def get_args(args=sys.argv[1:]):
 
-    parser = argparse.ArgumentParser(description="tmpname tool description",
+    parser = argparse.ArgumentParser(description="INSight tool description",
                                      formatter_class=argparse.RawTextHelpFormatter, usage=msg(), add_help=False)
 
     required = parser.add_argument_group("required arguments")
@@ -69,7 +69,7 @@ otherwise assumed in work directory""")
 
 # Custom usage message
 def msg():
-    return "tmpname [options] -s [species] [VCF] [work_directory]"
+    return "INSight [options] -s [species] [VCF] [work_directory]"
 
 # Check args
 def check_args(species):
