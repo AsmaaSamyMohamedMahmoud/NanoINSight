@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import os
-import tmpname
+import INSight
 
 def annotate_ins(vcf, 
                  wk_dir, 
@@ -11,18 +11,18 @@ def annotate_ins(vcf,
                  ins_seq='ins_seq.fa', 
                  sv_sup='sv_support_reads.tsv'
                  ):
-    tmpname.check_args(species)
-    mafft_exe = tmpname.check_exe(mafft_exe, 'mafft')
+    INSight.check_args(species)
+    mafft_exe = INSight.check_exe(mafft_exe, 'mafft')
     print('Creating insertion fasta')
-    id_seq, fasta_dir = tmpname.create_fa(vcf, wk_dir, sv_sup, ins_seq)
+    id_seq, fasta_dir = INSight.create_fa(vcf, wk_dir, sv_sup, ins_seq)
     print('Generating insertion sequence consensus')
-    con_fasta, threads_per_job= tmpname.create_cons(vcf, wk_dir, fasta_dir, id_seq, threads, mafft_exe, batch_size=100, num_parallel_workers=5)
+    con_fasta, threads_per_job= INSight.create_cons(vcf, wk_dir, fasta_dir, id_seq, threads, mafft_exe, batch_size=100, num_parallel_workers=5)
     print('Annotating insertions with RepeatMasker')
-    tmpname.rep_annote(wk_dir, con_fasta, threads_per_job, species)
+    INSight.rep_annote(wk_dir, con_fasta, threads_per_job, species)
     print('Finished')
 
 def main():
-    args = tmpname.get_args()
+    args = INSight.get_args()
     # Observe verbosity
     if args.quiet:
         sys.stdout = open(os.devnull, 'w')
