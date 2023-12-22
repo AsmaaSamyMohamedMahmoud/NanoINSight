@@ -7,7 +7,7 @@ from INSight import __version__
 # Parse input arguments
 def get_args(args=sys.argv[1:]):
 
-    parser = argparse.ArgumentParser(description="INSight tool description",
+    parser = argparse.ArgumentParser(description="INSight is a repeat annotation tool for insertions called by NanoVar",
                                      formatter_class=argparse.RawTextHelpFormatter, usage=msg(), add_help=False)
 
     required = parser.add_argument_group("required arguments")
