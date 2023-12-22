@@ -5,24 +5,24 @@ current_dir = os.path.abspath(os.path.dirname(__file__))
 with open(os.path.join(current_dir, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
-exec(open("tmpname/version.py").read())
+exec(open("INSight/version.py").read())
 
 setup(
-    name='tmpname',
+    name='INSight',
     version=__version__,
     packages=find_packages(),
-    url='https://github.com/AsmaaSamyMohamedMahmoud/tmpname',
+    url='https://github.com/AsmaaSamyMohamedMahmoud/INSight',
     license='gpl-3.0',
     author='Asmaa',
     author_email='asmmahmoud@mun.ca',
     description='Repeat annotation tool for insertions called by NanoVar',
-    keywords=['insertion structural variant repeat annotation'],
+    keywords=['insertion', 'structural variant','repeat annotation'],
     long_description=long_description,
     long_description_content_type="text/markdown",
     install_requires=['biopython>=1.79', 'scikit-allel>=1.3.7', 'pandas>=1.5.3'],
     entry_points={
         "console_scripts": [
-            "tmpname=tmpname.tmpname:main",
+            "INSight=INSight.INSight:main",
         ],
     },
     python_requires='>=3',
