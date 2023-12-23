@@ -8,7 +8,7 @@ from Bio import SeqIO
 from Bio.Align.Applications import MafftCommandline
 from concurrent.futures import ThreadPoolExecutor
 import subprocess
-
+import shutil
 ################################################################################################################################################################
 #(2) Generating multiple alignment and consensus sequences for each INS
 ################################################################################################################################################################              
@@ -40,6 +40,7 @@ def create_cons(vcf, wk_dir, fasta_dir, id_seq, num_threads, mafft_path, batch_s
     threads_per_job = submit_jobs(fasta_dir, MA_dir, con_dir, mafft_exe, threads_per_job, num_parallel_workers, batch_size)
     rename_header(con_dir, id_seq)
     con_fasta = cat_consensus(vcf, con_dir, wk_dir)
+    remove_tempdirs(fasta_dir, MA_dir, con_dir)
     return con_fasta, threads_per_job
 
 ## Run Mafft and generate consensus with multi-threading
@@ -105,3 +106,7 @@ def cat_consensus(vcf, con_dir, wk_dir):
     out = os.path.join(wk_dir, f'{samplename}.ins.con.fasta')
     subprocess.run([f"cat {con_dir}/*.fasta > {out}"], capture_output=True, text=True, shell = True)
     return out
+def remove_tempdirs(fasta_dir, MA_dir, con_dir):
+    tmp_dirs = [fasta_dir, MA_dir, con_dir]
+    for tmp_dir in tmp_dirs:
+        shutil.rmtree(tmp_dir)
