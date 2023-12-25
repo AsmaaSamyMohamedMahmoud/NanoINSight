@@ -39,7 +39,9 @@ INSight -s <species> .nanovar.pass.vcf working_dir
 ```
 ### Required parameters:
 -s : Specify species for repeatmasker (e.g. human)".
+
 Path to VCF input file.
+
 Path to working directory.
 
 ### Additional Parameters:
