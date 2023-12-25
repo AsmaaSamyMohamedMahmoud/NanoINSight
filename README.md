@@ -45,7 +45,7 @@ Additional Parameters:
 ```
 ### Output:
 * .ins.con.fasta : fasta file of consensus sequences of insertions found in the VCF input file.
-* rm_output: output directory of [RepeatMasker] (https://www.repeatmasker.org/webrepeatmaskerhelp.html#reading).
+* rm_output: output directory of [RepeatMasker](https://www.repeatmasker.org/webrepeatmaskerhelp.html#reading).
 
 ### Citation:
 If you use INSight, please cite:
