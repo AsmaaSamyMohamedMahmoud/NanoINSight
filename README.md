@@ -29,7 +29,7 @@ Please visit [here](https://www.repeatmasker.org/RepeatMasker/) for instructions
 ### Run:
 ##### Option 1: Run with NanoVar command by adding " " parameter 
 ```
-nanovar [Options] sample.fq/sample.bam ref.fa working_dir --"ins_ann"
+nanovar [Options] sample.fq/sample.bam ref.fa working_dir 
 for more details: see [NanoVar wiki](https://github.com/cytham/nanovar/wiki).
 ```
 ##### Option 2: Run via the command-line 
