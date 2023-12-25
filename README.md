@@ -59,6 +59,7 @@ Additional Parameters:
 | -u | Path to sv_support_reads.tsv file (NanoVar output) |
 | -m | Path to mafft executable file |
 | -r | Path to RepeatMasker executable file |
+
 ## Output:
 .ins.con.fasta : fasta file of consensus sequences of insertions found in the VCF input file.
 
