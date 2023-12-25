@@ -51,6 +51,6 @@ Additional Parameters:
 If you use INSight, please cite:
 
 ### Authors:
-* **Asmaa Samy** - [AsmaaSamyMohamedMahmoud](https://github.com/cytham](https://github.com/AsmaaSamyMohamedMahmoud)
-* **Tham Cheng Yong** - [cytham](https://github.com/cytham)
-* **Touati Benoukraf** - [benoukraflab](https://github.com/benoukraflab)
+* **Asmaa Samy** - [AsmaaSamyMohamedMahmoud](https://github.com/AsmaaSamyMohamedMahmoud).
+* **Tham Cheng Yong** - [cytham](https://github.com/cytham).
+* **Touati Benoukraf** - [benoukraflab](https://github.com/benoukraflab).
