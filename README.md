@@ -2,10 +2,11 @@
 INSight is a repeat annotation tool for insertions called by [NanoVar](https://github.com/benoukraflab/nanovar).
 
 ### Installation:
+```
 git clone https://github.com/benoukraflab/INSight.git
 cd INSight 
 pip install .
-
+```
 ### Installation of dependencies
 ##### 1. _MAFFT_
 ##### Option 1: Conda 
