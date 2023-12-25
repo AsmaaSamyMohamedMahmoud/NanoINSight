@@ -36,7 +36,7 @@ for more details: see [NanoVar wiki](https://github.com/cytham/nanovar/wiki).
 ```
 INSight -s <species> .nanovar.pass.vcf working_dir
 
-**Required parameters:**
+Required parameters:
 -s : Specify species for repeatmasker (e.g. human)".
 [vcf] : Path to VCF input file.
 [dir] : Path to working directory.
