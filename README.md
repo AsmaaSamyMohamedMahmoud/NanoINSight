@@ -39,23 +39,16 @@ INSight -s <species> .nanovar.pass.vcf working_dir
 ```
 ```
 Required parameters:
--s : Specify species for repeatmasker (e.g. human)".
-
+`-s ` Specify species for repeatmasker (e.g. human)".
 Path to VCF input file.
-
 Path to working directory.
 
 Additional Parameters:
 -t : Number of threads [1].
-
 -i : Path to ins_seq.fa file (NanoVar output).
-
 -u : Path to sv_support_reads.tsv file (NanoVar output).
-
 -m : Path to mafft executable file.
-
 -r : Path to RepeatMasker executable file. 
-
 -h : Show help message.
 ```
 ## Output:
