@@ -37,14 +37,16 @@ For more details: see [NanoVar wiki](https://github.com/cytham/nanovar/wiki).
 ```
 INSight -s <species> .nanovar.pass.vcf working_dir
 ```
-### Required parameters:
+## Usage:
+```
+Required parameters:
 -s : Specify species for repeatmasker (e.g. human)".
 
 Path to VCF input file.
 
 Path to working directory.
 
-### Additional Parameters:
+Additional Parameters:
 -t : Number of threads [1].
 
 -i : Path to ins_seq.fa file (NanoVar output).
@@ -56,7 +58,7 @@ Path to working directory.
 -r : Path to RepeatMasker executable file. 
 
 -h : Show help message.
-
+```
 ## Output:
 .ins.con.fasta : fasta file of consensus sequences of insertions found in the VCF input file.
 
