@@ -35,22 +35,30 @@ For more details: see [NanoVar wiki](https://github.com/cytham/nanovar/wiki).
 
 ### Option 2: Run via the command-line 
 ```
-INSight -s <species> .nanovar.pass.vcf working_dir
-```
+INSight [-h] [-v] [-q] [-t int] [-i path] [-u path] [-m path] [-r path] 
+        [-s species][FASTQ/FASTA/BAM] [VCF] [working_directory]
+
+Example:
+        INSight -t 4 -s human sample.nanovar.pass.vcf ./work_dir
 ```
 Required parameters:
-`-s ` Specify species for repeatmasker (e.g. human)".
-Path to VCF input file.
-Path to working directory.
+| Parameter | Description |
+| ------ | ------ |
+| -s | Specify species for repeatmasker (e.g. human)|
+| [VCF] | Path to VCF input file |
+| [working_directory] | Path to working directory |
 
 Additional Parameters:
--t : Number of threads [1].
--i : Path to ins_seq.fa file (NanoVar output).
--u : Path to sv_support_reads.tsv file (NanoVar output).
--m : Path to mafft executable file.
--r : Path to RepeatMasker executable file. 
--h : Show help message.
-```
+| Parameter | Description |
+| ------ | ------ |
+| -h | Show help message |
+| -v | Show version |
+| -q | hide verbose |
+| -t | Number of threads [1]|
+| -i | Path to ins_seq.fa file (NanoVar output) |
+| -u | Path to sv_support_reads.tsv file (NanoVar output) |
+| -m | Path to mafft executable file |
+| -r | Path to RepeatMasker executable file |
 ## Output:
 .ins.con.fasta : fasta file of consensus sequences of insertions found in the VCF input file.
 
