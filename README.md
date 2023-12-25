@@ -31,7 +31,7 @@ Please visit [here](https://www.repeatmasker.org/RepeatMasker/) for instructions
 ```
 nanovar [Options] "ins" sample.fq/sample.bam ref.fa working_dir 
 ```
-For more details: see [NanoVar wiki](https://github.com/cytham/nanovar/wiki).
+For more details: see [NanoVar wiki](https://github.com/cytham/nanovar/wiki)
 
 ### Option 2: Run via the command-line 
 ```
