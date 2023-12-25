@@ -29,27 +29,27 @@ Please visit [here](https://www.repeatmasker.org/RepeatMasker/) for instructions
 ### Run:
 ##### Option 1: Run with NanoVar command by adding " " parameter 
 ```
-nanovar [Options] sample.fq/sample.bam ref.fa working_dir 
+nanovar [Options] "ins" sample.fq/sample.bam ref.fa working_dir 
 ```
-for more details: see [NanoVar wiki](https://github.com/cytham/nanovar/wiki).
+For more details: see [NanoVar wiki](https://github.com/cytham/nanovar/wiki).
 
 ##### Option 2: Run via the command-line 
 ```
 INSight -s <species> .nanovar.pass.vcf working_dir
-
-Required parameters:
+```
+## Required parameters:
 -s : Specify species for repeatmasker (e.g. human)".
 Path to VCF input file.
 Path to working directory.
 
-Additional Parameters:
+## Additional Parameters:
 -t : Number of threads [1].
 -i : Path to ins_seq.fa file (NanoVar output).
 -u : Path to sv_support_reads.tsv file (NanoVar output).
 -h : Show help message.
 -m : Path to mafft executable file.
 -r : Path to RepeatMasker executable file. 
-```
+
 ### Output:
 * .ins.con.fasta : fasta file of consensus sequences of insertions found in the VCF input file.
 * rm_output: output directory of [RepeatMasker](https://www.repeatmasker.org/webrepeatmaskerhelp.html#reading).
