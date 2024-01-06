@@ -7,8 +7,8 @@ def annotate_ins(vcf,
                  wk_dir, 
                  species, 
                  threads, 
-                 mafft_exe=None,
-                 repmask_exe=None,
+                 mafft_exe,
+                 repmask_exe,
                  ins_seq='ins_seq.fa', 
                  sv_sup='sv_support_reads.tsv'
                  ):
