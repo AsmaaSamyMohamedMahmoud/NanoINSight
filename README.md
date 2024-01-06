@@ -1,10 +1,10 @@
-# INSight 
-INSight is a repeat annotation tool for insertions called by [NanoVar](https://github.com/benoukraflab/nanovar).
+# NanoINSight 
+NanoINSight is a repeat annotation tool for insertions called by [NanoVar](https://github.com/benoukraflab/nanovar).
 
 ## Installation:
 ```
-git clone https://github.com/benoukraflab/INSight.git
-cd INSight 
+git clone https://github.com/benoukraflab/nanoinsight.git
+cd nanoinsight
 pip install .
 ```
 ## Installation of dependencies
@@ -29,17 +29,17 @@ Please visit [here](https://www.repeatmasker.org/RepeatMasker/) for instructions
 ## Run:
 ### Option 1: Run with NanoVar command by adding " " parameter 
 ```
-nanovar [Options] "ins" sample.fq/sample.bam ref.fa working_dir 
+nanovar [Options] --annotate_ins sample.fq/sample.bam ref.fa working_dir 
 ```
 For more details: see [NanoVar wiki](https://github.com/cytham/nanovar/wiki)
 
 ### Option 2: Run via the command-line 
 ```
-INSight [-h] [-v] [-q] [-t int] [-i path] [-u path] [-m path] [-r path] 
-        [-s species] [VCF] [working_directory]
+nanoinsight [-h] [-v] [-q] [-t int] [-i path] [-u path] [-m path] [-r path] 
+            [-s species] [VCF] [working_directory]
 
 Example:
-        INSight -t 4 -s human sample.nanovar.pass.vcf ./work_dir
+        nanoinsight -t 4 -s human sample.nanovar.pass.vcf ./work_dir
 ```
 Required parameters:
 | Parameter | Description |
@@ -67,7 +67,7 @@ Additional Parameters:
 | rm_output | output directory of [RepeatMasker](https://www.repeatmasker.org/webrepeatmaskerhelp.html#reading) |
 
 ## Citation:
-If you use INSight, please cite:
+If you use NanoINSight, please cite:
 
 ## Authors:
 * **Asmaa Samy** - [AsmaaSamyMohamedMahmoud](https://github.com/AsmaaSamyMohamedMahmoud).
