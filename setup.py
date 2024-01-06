@@ -8,10 +8,10 @@ with open(os.path.join(current_dir, 'README.md'), encoding='utf-8') as f:
 exec(open("INSight/version.py").read())
 
 setup(
-    name='INSight',
+    name='NanoINSight',
     version=__version__,
     packages=find_packages(),
-    url='https://github.com/AsmaaSamyMohamedMahmoud/INSight',
+    url='https://github.com/AsmaaSamyMohamedMahmoud/nanoinsight',
     license='gpl-3.0',
     author='Asmaa',
     author_email='asmmahmoud@mun.ca',
@@ -22,7 +22,7 @@ setup(
     install_requires=['biopython>=1.79', 'scikit-allel>=1.3.7', 'pandas>=1.5.3'],
     entry_points={
         "console_scripts": [
-            "INSight=INSight.INSight:main",
+            "nanoinsight=nanoinsight.nanoinsight:main",
         ],
     },
     python_requires='>=3',
