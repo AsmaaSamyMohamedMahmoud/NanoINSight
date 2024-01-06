@@ -27,9 +27,9 @@ and visit [here](https://mafft.cbrc.jp/alignment/software/installation_without_r
 Please visit [here](https://www.repeatmasker.org/RepeatMasker/) for instructions to install.
 
 ## Run:
-### Option 1: Run with NanoVar command by adding " " parameter 
+### Option 1: Run with NanoVar command by adding the "--annotate_ins [species]" parameter 
 ```
-nanovar [Options] --annotate_ins sample.fq/sample.bam ref.fa working_dir 
+nanovar [Options] --annotate_ins human sample.fq/sample.bam ref.fa working_dir 
 ```
 For more details: see [NanoVar wiki](https://github.com/cytham/nanovar/wiki)
 
