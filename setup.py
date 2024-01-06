@@ -5,7 +5,7 @@ current_dir = os.path.abspath(os.path.dirname(__file__))
 with open(os.path.join(current_dir, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
-exec(open("INSight/version.py").read())
+exec(open("nanoinsight/version.py").read())
 
 setup(
     name='NanoINSight',
