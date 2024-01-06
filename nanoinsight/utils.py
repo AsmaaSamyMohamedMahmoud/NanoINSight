@@ -7,7 +7,7 @@ from nanoinsight import __version__
 # Parse input arguments
 def get_args(args=sys.argv[1:]):
 
-    parser = argparse.ArgumentParser(description="INSight is a repeat annotation tool for insertions called by NanoVar",
+    parser = argparse.ArgumentParser(description="NanoINSight is a repeat annotation tool for insertions called by NanoVar",
                                      formatter_class=argparse.RawTextHelpFormatter, usage=msg(), add_help=False)
 
     required = parser.add_argument_group("required arguments")
@@ -69,7 +69,7 @@ otherwise assumed in work directory""")
 
 # Custom usage message
 def msg():
-    return "INSight [options] -s [species] [VCF] [work_directory]"
+    return "nanoinsight [options] -s [species] [VCF] [work_directory]"
 
 # Check args
 def check_args(species):
