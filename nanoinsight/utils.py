@@ -2,7 +2,7 @@ import os
 import sys
 import argparse
 import distutils.spawn
-from INSight import __version__
+from nanoinsight import __version__
 
 # Parse input arguments
 def get_args(args=sys.argv[1:]):
