@@ -6,6 +6,7 @@ from Bio.Seq import Seq
 from Bio.SeqRecord import SeqRecord
 from Bio import SeqIO
 # from Bio.Align.Applications import MafftCommandline
+from Bio.motifs import Motif
 from concurrent.futures import ThreadPoolExecutor
 import subprocess
 import shutil
@@ -60,9 +61,13 @@ def submit_jobs(fasta_dir, MA_dir, con_dir, mafft_exe, threads_per_job, num_para
                 #     out_file.write(stdout)
                 mafftcmdline(mafft_exe, input_path, MA_file, threads_per_job)
                 # Generate consensus sequence for the output file
-                alignment = AlignIO.read(MA_file, "fasta")
-                summary = AlignInfo.SummaryInfo(alignment)
-                consensus = summary.dumb_consensus(threshold=0.51, ambiguous='X')
+                # alignment = AlignIO.read(MA_file, "fasta")
+                # summary = AlignInfo.SummaryInfo(alignment)
+                # consensus = summary.dumb_consensus(threshold=0.51, ambiguous='X')
+                msa = AlignIO.read(MA_file, "fasta")
+                alignment = msa.alignment
+                motif = Motif('ACGT', alignment)
+                consensus = counts.calculate_consensus(identity=0.7)
                 # Write consensus sequence to output file
                 consensus_record = SeqRecord(Seq(consensus), id="consensus")
                 SeqIO.write(consensus_record, con_file, "fasta")
