@@ -5,7 +5,7 @@ from Bio.Align import AlignInfo
 from Bio.Seq import Seq
 from Bio.SeqRecord import SeqRecord
 from Bio import SeqIO
-from Bio.Align.Applications import MafftCommandline
+# from Bio.Align.Applications import MafftCommandline
 from concurrent.futures import ThreadPoolExecutor
 import subprocess
 import shutil
