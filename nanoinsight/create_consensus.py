@@ -67,6 +67,7 @@ def submit_jobs(fasta_dir, MA_dir, con_dir, mafft_exe, threads_per_job, num_para
                 msa = AlignIO.read(MA_file, "fasta")
                 alignment = msa.alignment
                 motif = Motif('ACGT', alignment)
+                counts = motif.counts
                 consensus = counts.calculate_consensus(identity=0.7)
                 # Write consensus sequence to output file
                 consensus_record = SeqRecord(Seq(consensus), id="consensus")
