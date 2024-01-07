@@ -54,10 +54,11 @@ def submit_jobs(fasta_dir, MA_dir, con_dir, mafft_exe, threads_per_job, num_para
                 MA_file = os.path.join(MA_dir, input_file.replace(".fasta", ".MA.fasta"))
                 con_file = os.path.join(con_dir, input_file.replace(".fasta", ".con.fasta"))
                 # Run MAFFT with MafftCommandline
-                mafft_cline = MafftCommandline(mafft_exe,input=input_path, auto=True, thread=threads_per_job)
-                stdout, stderr = mafft_cline()
-                with open(MA_file, "w") as out_file:
-                    out_file.write(stdout)
+                # mafft_cline = MafftCommandline(mafft_exe,input=input_path, auto=True, thread=threads_per_job)
+                # stdout, stderr = mafft_cline()
+                # with open(MA_file, "w") as out_file:
+                #     out_file.write(stdout)
+                mafftcmdline(mafft_exe, input_path, MA_file, threads_per_job)
                 # Generate consensus sequence for the output file
                 alignment = AlignIO.read(MA_file, "fasta")
                 summary = AlignInfo.SummaryInfo(alignment)
@@ -106,7 +107,16 @@ def cat_consensus(vcf, con_dir, wk_dir):
     out = os.path.join(wk_dir, f'{samplename}.ins.con.fasta')
     subprocess.run([f"cat {con_dir}/*.fasta > {out}"], capture_output=True, text=True, shell = True)
     return out
+
 def remove_tmpdirs(fasta_dir, MA_dir, con_dir):
     tmp_dirs = [fasta_dir, MA_dir, con_dir]
     for tmp_dir in tmp_dirs:
         shutil.rmtree(tmp_dir)
+
+# Run MAFFT command line
+def mafftcmdline(mafft_exe, input, output, threads):
+    p = subprocess.run([f"{mafft_exe} --auto --thread {threads} {input} > {output}"],
+                       capture_output=True, text=True, shell=True)
+    if p.returncode != 0:
+        err = p.stderr.strip()
+        raise Exception('Mafft returned non-zero exit status:\n %s' % err)
