@@ -19,16 +19,16 @@ setup(
     keywords=['insertion', 'structural variant','repeat annotation'],
     long_description=long_description,
     long_description_content_type="text/markdown",
-    install_requires=['biopython>=1.79', 'scikit-allel>=1.3.7', 'pandas>=1.5.3'],
+    install_requires=['biopython>=1.82', 'scikit-allel>=1.3.7', 'pandas>=1.5.3'],
     entry_points={
         "console_scripts": [
             "nanoinsight=nanoinsight.nanoinsight:main",
         ],
     },
-    python_requires='>=3',
+    python_requires='>=3.8',
     classifiers=[
         "Operating System :: POSIX :: Linux",
-        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.8",
         "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
         "Topic :: Scientific/Engineering :: Bio-Informatics"
     ]
