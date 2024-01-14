@@ -54,7 +54,7 @@ otherwise assumed in work directory""")
 
     optional.add_argument("-v", "--version", action='version',
                         version=__version__,
-                        help="prints version")
+                        help="print version")
     
     optional.add_argument("-q", "--quiet", action='store_true',
                         help="hide verbose")
