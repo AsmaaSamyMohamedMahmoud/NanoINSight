@@ -107,9 +107,11 @@ def rename_header(con_dir, id_seq):
 
 # Concatenate all consensus sequences in one file for RM
 def cat_consensus(vcf, con_dir, wk_dir):
-    #samplename, ext = os.path.splitext(vcf)
-    # samplename = samplename.replace('.nanovar.pass', '')
-    samplename = os.path.basename(vcf).strip('.nanovar.pass.vcf.gz')
+    filename, extension = os.path.splitext(os.path.basename(vcf))
+    samplename = filename.replace('.nanovar.pass', '')
+    if '.vcf' in samplename:
+    samplename = samplename.replace('.vcf', '')
+    #samplename = os.path.basename(vcf).strip('.nanovar.pass.vcf.gz')
     out = os.path.join(wk_dir, f'{samplename}.ins.con.fasta')
     subprocess.run([f"cat {con_dir}/*.fasta > {out}"], capture_output=True, text=True, shell = True)
     return out
