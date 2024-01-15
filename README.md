@@ -2,6 +2,13 @@
 NanoINSight is a repeat annotation tool for insertions called by [NanoVar](https://github.com/benoukraflab/nanovar).
 
 ## Installation:
+
+Using Pip
+```
+pip install nanoinsight
+```
+
+Cloning from GitHub repository
 ```
 git clone https://github.com/benoukraflab/nanoinsight.git
 cd nanoinsight
