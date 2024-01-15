@@ -110,7 +110,7 @@ def cat_consensus(vcf, con_dir, wk_dir):
     filename, extension = os.path.splitext(os.path.basename(vcf))
     samplename = filename.replace('.nanovar.pass', '')
     if '.vcf' in samplename:
-    samplename = samplename.replace('.vcf', '')
+        samplename = samplename.replace('.vcf', '')
     #samplename = os.path.basename(vcf).strip('.nanovar.pass.vcf.gz')
     out = os.path.join(wk_dir, f'{samplename}.ins.con.fasta')
     subprocess.run([f"cat {con_dir}/*.fasta > {out}"], capture_output=True, text=True, shell = True)
