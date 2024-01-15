@@ -8,7 +8,7 @@ with open(os.path.join(current_dir, 'README.md'), encoding='utf-8') as f:
 exec(open("nanoinsight/version.py").read())
 
 setup(
-    name='NanoINSight',
+    name='nanoinsight',
     version=__version__,
     packages=find_packages(),
     url='https://github.com/AsmaaSamyMohamedMahmoud/nanoinsight',
