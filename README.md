@@ -13,7 +13,7 @@ pip install nanoinsight
 ```
 #### Option 3: Cloning from GitHub repository
 ```
-git clone https://github.com/benoukraflab/NanoINSight.git
+git clone https://github.com/asmmahmoud/NanoINSight.git
 cd NanoINSight
 pip install .
 ```
