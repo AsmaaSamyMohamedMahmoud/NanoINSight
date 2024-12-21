@@ -77,6 +77,6 @@ Additional Parameters:
 | rm_output | output directory of [RepeatMasker](https://www.repeatmasker.org/webrepeatmaskerhelp.html#reading) |
 
 ## Authors:
-* **Asmaa Samy** - [AsmaaSamyMohamedMahmoud](https://github.com/AsmaaSamyMohamedMahmoud).
+* **Asmaa Samy** - [asmmahmoud](https://github.com/asmmahmoud).
 * **Tham Cheng Yong** - [cytham](https://github.com/cytham).
 * **Touati Benoukraf** - [benoukraflab](https://github.com/benoukraflab).
