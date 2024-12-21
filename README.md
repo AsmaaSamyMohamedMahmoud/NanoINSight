@@ -49,7 +49,7 @@ nanoinsight [-h] [-v] [-q] [-t int] [-i path] [-u path] [-m path] [-r path]
             [-s species] [VCF] [working_directory]
 
 Example:
-        nanoinsight -t 4 -s human sample.nanovar.pass.vcf ./work_dir
+        nanoinsight -t 4 -s human sample.nanovar.pass.vcf ./working_dir
 ```
 Required parameters:
 | Parameter | Description |
